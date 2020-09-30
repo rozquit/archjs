@@ -4,6 +4,7 @@ node_modules
 etc/ssl
 dist
 static/app.css
+static/app.css.map
 static/app.js
 static/service-worker.js
 

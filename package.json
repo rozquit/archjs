@@ -1,0 +1,49 @@
+{
+  "name": "archjs",
+  "version": "0.1.0",
+  "description": "Full-stack Node.js Framework",
+  "keywords": ["nodejs", "uWebSockets.js", "svelte"],
+  "author": "Artem Tolstykh aka Mr. Arch",
+  "license": "ISC",
+  "main": "server.js",
+  "scripts": {
+    "config:prod": "sh etc/scripts/config.sh production",
+    "config:dev": "sh etc/scripts/config.sh development",
+    "build": "rollup -c",
+    "develop": "npm run config:dev && npm run build && nodemon",
+    "start": "npm run config:prod && npm run build && node dist/server.js",
+    "test": "standard"
+  },
+  "dependencies": {
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/plugin-syntax-dynamic-import": "*",
+    "@babel/plugin-transform-runtime": "*",
+    "@babel/preset-env": "*",
+    "@babel/runtime": "*",
+    "@rollup/plugin-babel": "*",
+    "@rollup/plugin-commonjs": "*",
+    "@rollup/plugin-node-resolve": "*",
+    "@rollup/plugin-replace": "*",
+    "esm": "*",
+    "nodemon": "*",
+    "prettier": "*",
+    "rollup": "*",
+    "rollup-plugin-svelte": "*",
+    "rollup-plugin-terser": "*",
+    "standard": "*",
+    "svelte": "*"
+  },
+  "standard": {
+    "ignore": [
+      "dist",
+      "static"
+    ]
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "private": true
+}

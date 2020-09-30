@@ -1,0 +1,7 @@
+{
+  "watch": ["**/*"],
+  "ignore": ["node_modules/**/node_modules"],
+  "env": { "NODE_ENV": "development" },
+  "execMap": { "js": "node --harmony -r esm src/server.js" },
+  "ext": "js"
+}

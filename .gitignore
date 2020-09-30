@@ -1,0 +1,13 @@
+.idea
+
+node_modules
+etc/ssl
+dist
+static/app.css
+static/app.js
+static/service-worker.js
+
+*.log
+*.pem
+
+.DS_Store

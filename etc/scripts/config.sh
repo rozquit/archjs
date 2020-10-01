@@ -14,7 +14,7 @@ echo -e "${LG}
         ####  ####
 ${NC}"
 
-echo -e "${RAA}${LG}[arch] v0.1.0${NC}"
+echo -e "${LG}[arch] v0.1.0${NC}"
 
 ENV=${1}
 
@@ -28,7 +28,7 @@ CFG=${CONFIG}/index.js
 mkdir -p "${CONFIG}"
 
 if [ "$ENV" = "production" ]; then
-  echo -e "${RAA}${LG}[arch] creating production config${NC}"
+  echo -e "${LG}[arch] creating production config${NC}"
 
   awk -F= -v q="'" -v z='' -v d=' = ' -v t='exports.' '
   /^[A-Z]/{

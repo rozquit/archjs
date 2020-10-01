@@ -26,7 +26,7 @@ set -a [ -f ./"$ENV".env ] && . ./"$ENV".env && set +
 CONFIG=${CONFIG}/index.js
 
 if [ "$ENV" = "production" ]; then
-  echo "${RAA}${LG}[arch] creating production config${NC}"
+  echo -e "${RAA}${LG}[arch] creating production config${NC}"
 
   awk -F= -v q="'" -v z='' -v d=' = ' -v t='exports.' '
   /^[A-Z]/{

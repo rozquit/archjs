@@ -33,8 +33,8 @@ uWS
   .get('/*', serve)
   .listen(port, (token) => {
     if (token) {
-      console.log('[arch | uws] listening to port:', port)
+      console.log('[arch|uws] listening to port:', port)
     } else {
-      console.log('[arch | uws] failed to listen to port:', port)
+      console.log('[arch|uws] failed to listen to port:', port)
     }
   })

@@ -1,5 +1,6 @@
 .idea
 .git
+.clinic
 
 node_modules
 etc

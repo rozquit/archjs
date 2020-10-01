@@ -3,7 +3,7 @@
 LG='\033[1;32m'
 NC='\033[0m'
 
-echo "${LG}
+echo -e "${LG}
       ##          ##
         ##      ##
       ##############
@@ -14,7 +14,7 @@ echo "${LG}
         ####  ####
 ${NC}"
 
-echo "${RAA}${LG}[arch] v0.1.0${NC}"
+echo -e "${RAA}${LG}[arch] v0.1.0${NC}"
 
 ENV=${1}
 
@@ -35,7 +35,7 @@ if [ "$ENV" = "production" ]; then
   printf length($2) ? tolower($2) ~ /true|false|null|^[0-9]*$/ ? tolower($2) : q $2 q : "null";
   print z;}' "$ENV".env >"${CONFIG}"
 else
-  echo "${LG}[arch] creating development config${NC}"
+  echo -e "${LG}[arch] creating development config${NC}"
 
   awk -F= -v q="'" -v z='' -v d=' = ' -v t='exports.' '
   /^[A-Z]/{

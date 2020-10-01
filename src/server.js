@@ -1,8 +1,11 @@
 import uWS from 'uWebSockets.js'
-import serve from '../utils/serve'
-import { PORT } from '../config'
+import serve from '../lib/serve'
+import { createLogger } from '../lib/logger'
+import { NODE_ENV, PORT } from '../config'
 
+const dev = NODE_ENV === 'development'
 const port = PORT
+const logger = createLogger({ logger: dev })
 
 uWS
   ./* SSL */App({
@@ -15,23 +18,23 @@ uWS
     maxPayloadLength: 16 * 1024 * 1024,
     idleTimeout: 10,
     open: (ws) => {
-      console.log('[archjs]', 'ws connected')
+      logger.info('ws connected')
     },
     message: (ws, message, isBinary) => {
       ws.send(message, isBinary)
     },
     drain: (ws) => {
-      console.log('[archjs]', `ws backpressure: ${ws.getBufferedAmount()}`)
+      logger.info(`ws backpressure: ${ws.getBufferedAmount()}`)
     },
     close: (ws, code, message) => {
-      console.log('[archjs]', 'ws closed')
+      logger.info('ws closed')
     }
   })
   .get('/*', serve)
   .listen(port, (token) => {
     if (token) {
-      console.log('[archjs] listening to port:', port)
+      console.log('[arch | uws] listening to port:', port)
     } else {
-      console.log('[archjs] failed to listen to port:', port)
+      console.log('[arch | uws] failed to listen to port:', port)
     }
   })

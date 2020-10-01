@@ -2,7 +2,11 @@
   "name": "archjs",
   "version": "0.1.0",
   "description": "Full-stack Node.js Framework",
-  "keywords": ["nodejs", "uWebSockets.js", "svelte"],
+  "keywords": [
+    "nodejs",
+    "uWebSockets.js",
+    "svelte"
+  ],
   "author": "Artem Tolstykh aka Mr. Arch",
   "license": "ISC",
   "main": "server.js",
@@ -12,9 +16,13 @@
     "build": "rollup -c",
     "develop": "npm run config:dev && npm run build && nodemon",
     "start": "npm run config:prod && npm run build && node dist/server.js",
+    "clinic": "sh etc/scripts/clinic.sh",
+    "perform": "sh etc/scripts/perform.sh index.html",
     "test": "standard"
   },
   "dependencies": {
+    "abstract-logging": "*",
+    "pino": "*",
     "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.6.0"
   },
   "devDependencies": {

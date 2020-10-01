@@ -1,12 +1,10 @@
 .idea
+.clinic
 
 node_modules
 etc/ssl
 dist
-static/app.css
-static/app.css.map
-static/app.js
-static/service-worker.js
+static/build
 
 *.log
 *.pem

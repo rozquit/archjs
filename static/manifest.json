@@ -1,18 +1,18 @@
 {
   "background_color": "#f5f5f5",
-  "theme_color": "#0356fc",
-  "name": "Arch App",
-  "short_name": "Arch",
+  "theme_color": "#ff3e00",
+  "name": "ArchJS App",
+  "short_name": "ArchJS",
   "display": "minimal-ui",
   "start_url": "/",
   "icons": [
     {
-      "src": "logo-192.png",
+      "src": "assets/alien-monster-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "logo-512.png",
+      "src": "assets/alien-monster-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

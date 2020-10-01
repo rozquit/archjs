@@ -23,7 +23,9 @@ export NODE_ENV="$ENV"
 # shellcheck disable=SC1090
 set -a [ -f ./"$ENV".env ] && . ./"$ENV".env && set +
 
-CONFIG=${CONFIG}/index.js
+CFG=${CONFIG}/index.js
+
+mkdir -p "${CONFIG}"
 
 if [ "$ENV" = "production" ]; then
   echo -e "${RAA}${LG}[arch] creating production config${NC}"
@@ -33,7 +35,7 @@ if [ "$ENV" = "production" ]; then
   gsub(/'\''|'\"'/,"", $2);
   printf t $1 d;
   printf length($2) ? tolower($2) ~ /true|false|null|^[0-9]*$/ ? tolower($2) : q $2 q : "null";
-  print z;}' "$ENV".env >"${CONFIG}"
+  print z;}' "$ENV".env >"${CFG}"
 else
   echo -e "${LG}[arch] creating development config${NC}"
 
@@ -42,5 +44,5 @@ else
   gsub(/'\''|'\"'/,"", $2);
   printf t $1 d;
   printf length($2) ? tolower($2) ~ /true|false|null|^[0-9]*$/ ? tolower($2) : q $2 q : "null";
-  print z;}' "$ENV".env >"${CONFIG}"
+  print z;}' "$ENV".env >"${CFG}"
 fi

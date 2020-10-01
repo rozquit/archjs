@@ -17,8 +17,7 @@ export default [
   {
     input: `${src}/client.js`,
     output: {
-      dir: `${stc}/build`,
-      entryFileNames: 'app.js',
+      file: `${stc}/build/app.js`,
       format: 'iife',
       sourcemap
     },
@@ -67,7 +66,7 @@ export default [
   {
     input: `${src}/server.js`,
     output: {
-      dir: `${dest}`,
+      file: `${dest}/server.js`,
       format: 'cjs',
       sourcemap
     },
@@ -93,7 +92,7 @@ export default [
   {
     input: `${src}/service-worker.js`,
     output: {
-      dir: `${stc}/build`,
+      file: `${stc}/build/sw.js`,
       format: 'iife',
       sourcemap
     },

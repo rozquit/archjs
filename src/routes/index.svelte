@@ -3,7 +3,7 @@
 </script>
 
 <main>
-  <h1>Hello, Mr. Arch!</h1>
+  <h1>Hi, my name is Mr. Arch!</h1>
 </main>
 
 <style>
@@ -14,7 +14,7 @@
     margin: 0 auto;
   }
   h1 {
-    color: #ff3e00;
+    color: #8204f9;
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 100;

@@ -1,6 +1,6 @@
 {
   "name": "archjs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Full-stack Node.js Framework",
   "keywords": [
     "nodejs",
@@ -8,7 +8,7 @@
     "svelte"
   ],
   "author": "Artem Tolstykh aka Mr. Arch",
-  "license": "ISC",
+  "license": "MIT",
   "main": "server.js",
   "scripts": {
     "config:prod": "sh etc/scripts/config.sh production",
@@ -22,7 +22,10 @@
   },
   "dependencies": {
     "abstract-logging": "*",
+    "mime": "*",
+    "page": "*",
     "pino": "*",
+    "totalist": "*",
     "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.6.0"
   },
   "devDependencies": {

@@ -1,11 +1,11 @@
 import uWS from 'uWebSockets.js'
 import serve from '../lib/serve'
-import { createLogger } from '../lib/logger'
+import Logger from '../lib/logger'
 import { NODE_ENV, PORT } from '../config'
 
 const dev = NODE_ENV === 'development'
 const port = PORT
-const logger = createLogger({ logger: dev })
+const logger = new Logger().create({ logger: dev })
 
 uWS
   ./* SSL */App({

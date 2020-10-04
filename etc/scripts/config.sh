@@ -14,7 +14,7 @@ echo -e "${LG}
         ####  ####
 ${NC}"
 
-echo -e "${LG}[arch] v0.1.0${NC}"
+echo -e "${LG}[arch] v0.2.0${NC}"
 
 ENV=${1}
 

@@ -4,8 +4,11 @@
   "description": "Full-stack Node.js Framework",
   "keywords": [
     "nodejs",
-    "uWebSockets.js",
-    "svelte"
+    "uwebsockets",
+    "svelte",
+    "rollup",
+    "full-stack",
+    "framework"
   ],
   "author": "Artem Tolstykh aka Mr. Arch",
   "license": "MIT",

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export NODE_ENV=
-
 LG='\033[1;32m'
 NC='\033[0m'
 

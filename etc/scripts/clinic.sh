@@ -2,7 +2,7 @@
 
 sh etc/scripts/config.sh production
 
-npm run build
+rollup -c
 
 set -a [ -f ./production.env ] && . ./production.env && set +
 

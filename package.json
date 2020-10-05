@@ -17,7 +17,7 @@
     "develop": "export NODE_ENV=development && sh etc/scripts/config.sh development && rollup -c -w",
     "start": "export NODE_ENV=production && sh etc/scripts/config.sh production && rollup -c && node dist/server.js",
     "clinic": "sh etc/scripts/clinic.sh",
-    "perform": "sh etc/scripts/perform.sh index.html",
+    "perform": "sh etc/scripts/perform.sh profile/arch",
     "test": "standard"
   },
   "dependencies": {

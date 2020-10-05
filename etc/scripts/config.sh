@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export NODE_ENV=
+
 LG='\033[1;32m'
 NC='\033[0m'
 
@@ -17,8 +19,6 @@ ${NC}"
 echo -e "${LG}[arch] v0.2.0${NC}"
 
 ENV=${1}
-
-export NODE_ENV="$ENV"
 
 # shellcheck disable=SC1090
 set -a [ -f ./"$ENV".env ] && . ./"$ENV".env && set +

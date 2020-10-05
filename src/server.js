@@ -1,9 +1,9 @@
 import uWS from 'uWebSockets.js'
 import serve from '../lib/serve'
 import Logger from '../lib/logger'
-import { NODE_ENV, PORT } from '../config'
+import { PORT } from '../config'
 
-const dev = NODE_ENV === 'development'
+const dev = process.env.NODE_ENV === 'development'
 const port = PORT
 const logger = new Logger().create({ logger: dev })
 

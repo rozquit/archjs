@@ -1,7 +1,7 @@
 {
-  "watch": ["**/*"],
+  "watch": ["src/**/*"],
   "ignore": ["node_modules/**/node_modules"],
   "env": { "NODE_ENV": "development" },
-  "execMap": { "js": "node --harmony -r esm src/server.js" },
-  "ext": "js"
+  "execMap": { "js": "node" },
+  "ext": "html,css,svelte,js"
 }

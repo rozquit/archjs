@@ -11,7 +11,7 @@
   import About from './pages/About.svelte'
   import Profile from './pages/Profile.svelte'
 
-  const data = { name: 'ArchJS', version: 'v0.2.0' }
+  const data = { name: 'ArchJS', version: 'v0.1.0' }
 
   const guard = (ctx, next) => true ? redirect('/login') : next()
 </script>

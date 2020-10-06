@@ -3,8 +3,9 @@
   "theme_color": "#8204f9",
   "name": "ArchJS App",
   "short_name": "ArchJS",
-  "display": "minimal-ui",
-  "start_url": "/",
+  "display": "standalone",
+  "start_url": "/static/build/",
+  "scope": "/static/build/",
   "icons": [
     {
       "src": "assets/alien-monster-192x192.png",

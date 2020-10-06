@@ -16,13 +16,13 @@ npm install
 npm start
 ```
 
-### Development:
+### Development
 
 ```
 npm run develop
 ```
 
-### Test:
+### Test
 
 ```
 npm test

@@ -45,12 +45,10 @@ export const register = () => {
   window.addEventListener('load', () => {
     registerServiceWorker()
   })
-
   window.addEventListener('beforeinstallprompt', event => {
     console.log('Installing PWA')
     console.dir({ beforeinstallprompt: event })
   })
-
   window.addEventListener('appinstalled', event => {
     console.log('PWA installed')
     console.dir({ appinstalled: event })

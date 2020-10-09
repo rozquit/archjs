@@ -113,7 +113,7 @@ export default [
     preserveEntrySignatures: 'strict'
   },
   {
-    input: `${src}/service-worker.js`,
+    input: `${src}/sw.js`,
     output: {
       file: `${stc}/build/sw.js`,
       format: 'iife',

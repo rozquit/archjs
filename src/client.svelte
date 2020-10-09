@@ -5,26 +5,28 @@
     NotFound,
     redirect
   } from './router'
-
-  import Login from './pages/Login.svelte'
-  import Home from './pages/Home.svelte'
-  import About from './pages/About.svelte'
-  import Profile from './pages/Profile.svelte'
+  
+  import {
+    Login,
+    Home,
+    About,
+    Profile
+  } from './pages'
 
   const data = { name: 'ArchJS', version: 'v0.1.0' }
 
   const guard = (ctx, next) => true ? redirect('/login') : next()
 </script>
 
-<main>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/profile/arch">Profile</a>
-    <a href="/private">Private</a>
-    <a href="/login">Login</a>
-  </nav>
+<nav>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/profile/arch">Profile</a>
+  <a href="/private">Private</a>
+  <a href="/login">Login</a>
+</nav>
 
+<main>
   <Router>
     <Route path="/" {data} component={Home} />
     <Route path="/about" component={About} />

@@ -29,7 +29,7 @@
   .with-sidebar > :global(*) > :global(*) {
     margin: calc(var(--space) / 2);
     flex-grow: 1;
-    flex-basis: var(--sade-width);
+    flex-basis: var(--side-width);
   }
 
   .with-sidebar.no-stretch > :global(*) {

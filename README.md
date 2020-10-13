@@ -32,6 +32,7 @@ npm test
 
 [Alex Hultman](https://github.com/alexhultman) — [uWebSockets.js](https://github.com/uNetworking/uWebSockets.js)
 <br>[Rich Harris](https://github.com/Rich-Harris) — [Svelte](https://github.com/sveltejs/svelte)
+<br>[Heydon Pickering](https://twitter.com/heydonworks) & [Andy Bell](https://twitter.com/hankchizljaw) — [Every Layout](https://every-layout.dev/)
 
 ## License
 

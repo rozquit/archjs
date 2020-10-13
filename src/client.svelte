@@ -18,13 +18,15 @@
   const guard = (ctx, next) => true ? redirect('/login') : next()
 </script>
 
-<nav>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/profile/arch">Profile</a>
-  <a href="/private">Private</a>
-  <a href="/login">Login</a>
-</nav>
+<header>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/profile/arch">Profile</a>
+    <a href="/private">Private</a>
+    <a href="/login">Login</a>
+  </nav>
+</header>
 
 <main>
   <Router>
@@ -41,31 +43,118 @@
   </Router>
 </main>
 
+<footer></footer>
+
 <style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
+  /* Axioms: https://every-layout.dev/rudiments/axioms/ */
+  :global(:root) {
+    --measure: 60ch;
   }
-  h1 {
-    color: #8204f9;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
+  
+  :global(.max-width\:measure) {
+    max-width: var(--measure);
   }
-  h2 {
-    color: #8204f9;
-    text-transform: uppercase;
-    font-size: 3em;
-    font-weight: 200;
+  
+  :global(.max-width\:measure\/2) {
+    max-width: calc(var(--measure) / 2);
   }
-  nav a {
-    padding: 1em;
+  
+  :global(*) {
+    max-width: var(--measure);
   }
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
+  /* Modular Scale: https://every-layout.dev/rudiments/modular-scale/ */
+  :global(:root) {
+    --ratio: 1.5;
+    --s-5: calc(var(--s-4) / var(--ratio));
+    --s-4: calc(var(--s-3) / var(--ratio));
+    --s-3: calc(var(--s-2) / var(--ratio));
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+    --s5: calc(var(--s4) * var(--ratio));
+  }
+
+  html,
+  body,
+  div,
+  header,
+  nav,
+  main,
+  footer {
+    max-width: none;
+  }
+  /* A Modern CSS Reset: https://hankchizljaw.com/wrote/a-modern-css-reset/ */
+  /* Box sizing rules */
+  :global(*),
+  :global(*)::before,
+  :global(*)::after {
+    box-sizing: border-box;
+  }
+  /* Remove default padding */
+  ul[class],
+  ol[class] {
+    padding: 0;
+  }
+  /* Remove default margin */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul[class],
+  ol[class],
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+  /* Remove list styles on ul, ol elements with a class attribute */
+  ul[class],
+  ol[class] {
+    list-style: none;
+  }
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  /* Make images easier to work with */
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  /* Natural flow and rhythm in articles by default */
+  article > :global(* + *) {
+    margin-top: 1em;
+  }
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  /* Remove all animations and transitions for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
   }
 </style>

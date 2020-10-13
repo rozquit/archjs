@@ -5,7 +5,7 @@
 
 <div
   class="{recursive ? 'stack recursive' : 'stack basic'}"
-  style="--space: {space}">
+  style="--space: {space === '0' ? '0px' : space}">
   <slot />
 </div>
 

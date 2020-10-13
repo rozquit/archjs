@@ -6,7 +6,7 @@
 
 <div
   class="cover"
-  style="--space: {space}; --min-height: {minHeight} --padding: {noPad ? 0 : space}">
+  style="--space: {space}; --min-height: {minHeight}; --padding: {noPad ? 0 : space}">
   <slot />
 </div>
 

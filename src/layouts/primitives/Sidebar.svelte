@@ -8,8 +8,8 @@
 
 <div
   class="with-sidebar"
-  class:left={side === 'left' && side !== 'right'}
-  class:right={side !== 'left' && side === 'right'}
+  class:left={side === 'left'}
+  class:right={side === 'right'}
   class:no-stretch={noStretch}
   style="--side-width: {sideWidth}; --content-min: {contentMin}; --space: {space === '0' ? '0px' : space}">
   <slot />

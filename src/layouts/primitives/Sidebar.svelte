@@ -31,20 +31,19 @@
     flex-grow: 1;
     flex-basis: var(--side-width);
   }
-
+  
   .with-sidebar.no-stretch > :global(*) {
     align-items: flex-start;
   }
   
-  .with-sidebar.left > :global(*) > :global(:last-child) {
+  .with-sidebar.left > :global(:last-child) {
     flex-basis: 0;
     flex-grow: 999;
     min-width: calc(var(--content-min) - var(--space));
   }
-
-  .with-sidebar.right > :global(*) > :global(:first-child) {
+  
+  .with-sidebar.right > :global(:first-child) {
     flex-basis: 0;
     flex-grow: 999;
-    min-width: calc(var(--content-min) - var(--space));
-  }
+    min-widt
 </style>

@@ -1,4 +1,6 @@
 <script>
+  import { reel } from './layouts/primitives'
+  
   import {
     Router,
     Route,
@@ -16,6 +18,8 @@
   const data = { name: 'ArchJS', version: 'v0.1.0' }
 
   const guard = (ctx, next) => true ? redirect('/login') : next()
+  
+  reel()
 </script>
 
 <header>

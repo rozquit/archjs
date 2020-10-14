@@ -6,6 +6,7 @@
     "nodejs",
     "uwebsockets",
     "svelte",
+    "every-layout",
     "rollup",
     "full-stack",
     "framework"

@@ -45,5 +45,6 @@
   .with-sidebar.right > :global(:first-child) {
     flex-basis: 0;
     flex-grow: 999;
-    min-widt
+    min-width: calc(var(--content-min) - var(--space));
+  }
 </style>

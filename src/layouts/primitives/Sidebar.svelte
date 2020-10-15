@@ -1,12 +1,19 @@
 <script>
+  import { onMount } from 'svelte';
+  
   export let side = 'left'
   export let sideWidth = null
   export let contentMin = '50%'
-  export let space = 'var(--s1)'
+  export let space = '1.5rem'
   export let noStretch = false
+  
+  let sidebar
+  
+  onMount(() => sidebar.querySelectorAll(`img`).forEach(e => e.style.width = '100%'))
 </script>
 
 <div
+  bind:this={sidebar}
   class="with-sidebar"
   class:left={side === 'left'}
   class:right={side === 'right'}

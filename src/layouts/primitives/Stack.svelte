@@ -14,7 +14,7 @@
         e.style.marginBottom = '0'
       })
     stack.querySelectorAll(recursive ? `.stack * + *` : `.stack > * + *`)
-      .forEach(e => e.style.marginTop = `var(--space)`);
+      .forEach(e => e.style.marginTop = 'var(--space)');
     if (splitAfter) {
       stack.querySelectorAll(`.stack :only-child`)
         .forEach(e => {

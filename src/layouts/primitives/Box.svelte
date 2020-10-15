@@ -1,5 +1,5 @@
 <script>
-  export let padding = 'var(--s1)'
+  export let padding = '1.5rem'
   export let borderWidth = 0
   export let invert = false
   export let colorLight = '#eee'

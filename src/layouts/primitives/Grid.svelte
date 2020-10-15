@@ -1,6 +1,6 @@
 <script>
   export let min = '250px'
-  export let space = 'var(--s1)'
+  export let space = '1.5rem'
 </script>
 
 <div

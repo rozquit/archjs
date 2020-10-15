@@ -1,10 +1,35 @@
 <script>
-  export let space = 'var(--s1)'
+  import { onMount } from 'svelte';
+
+  export let space = '1.5rem'
   export let recursive = false
+  export let splitAfter = null
+
+  let stack
+
+  onMount(() => {
+    stack.querySelectorAll(recursive ? `.stack *` : `.stack > *`)
+      .forEach(e => {
+        e.style.marginTop = '0'
+        e.style.marginBottom = '0'
+      })
+    stack.querySelectorAll(recursive ? `.stack * + *` : `.stack > * + *`)
+      .forEach(e => e.style.marginTop = `var(--space)`);
+    if (splitAfter) {
+      stack.querySelectorAll(`.stack :only-child`)
+        .forEach(e => {
+          e.style.height = '100%'
+          e.style.color = 'red'
+        })
+      stack.querySelectorAll(`.stack > :nth-child(${splitAfter})`)
+        .forEach(e => e.style.marginBottom = 'auto')
+    }
+  })
 </script>
 
 <div
-  class="{recursive ? 'stack recursive' : 'stack basic'}"
+  bind:this={stack}
+  class="stack"
   style="--space: {space === '0' ? '0px' : space}">
   <slot />
 </div>
@@ -14,31 +39,5 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-  }
-  
-  .basic > :global(*) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  
-  .basic > :global(* + *) {
-    margin-top: var(--space);
-  }
-  
-  .recursive :global(*) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  
-  .recursive :global(* + *) {
-    margin-top: var(--space);
-  }
-  
-  .stack :global(:only-child) {
-    height: 100%;
-  }
-  
-  .stack > :global(.split-after) {
-    margin-bottom: auto;
   }
 </style>

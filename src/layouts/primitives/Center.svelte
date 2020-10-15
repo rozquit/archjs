@@ -6,7 +6,7 @@
 </script>
 
 <div
-  class="center centered"
+  class="center"
   class:and-text={andText}
   class:gutters={gutters}
   class:intrinsic={intrinsic}

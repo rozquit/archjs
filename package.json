@@ -25,7 +25,7 @@
     "abstract-logging": "*",
     "page": "*",
     "pino": "^6.7.0",
-    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.6.0"
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.0",
@@ -39,7 +39,7 @@
     "@rollup/plugin-replace": "*",
     "nodemon": "^2.0.5",
     "prettier": "*",
-    "rollup": "^2.30.0",
+    "rollup": "^2.31.0",
     "rollup-plugin-livereload": "*",
     "rollup-plugin-svelte": "*",
     "rollup-plugin-terser": "*",

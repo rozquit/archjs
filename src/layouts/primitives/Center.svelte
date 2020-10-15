@@ -1,7 +1,7 @@
 <script>
   export let max = '60ch'
   export let andText = false
-  export let gutters = false
+  export let gutters = 0
   export let intrinsic = false
 </script>
 

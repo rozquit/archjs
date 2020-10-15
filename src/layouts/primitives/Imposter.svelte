@@ -1,6 +1,6 @@
 <script>
   export let breakout = false
-  export let margin = 0
+  export let margin = '0'
   export let fixed = false
 </script>
 

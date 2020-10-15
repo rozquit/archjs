@@ -1,6 +1,6 @@
 <script>
   export let padding = '1.5rem'
-  export let borderWidth = 0
+  export let borderWidth = '0'
   export let invert = false
   export let colorLight = '#eee'
   export let colorDark = '#000'

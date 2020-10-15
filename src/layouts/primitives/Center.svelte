@@ -1,7 +1,7 @@
 <script>
-  export let max = 'var(--measure)'
+  export let max = '60ch'
   export let andText = false
-  export let gutters = 0
+  export let gutters = false
   export let intrinsic = false
 </script>
 
@@ -19,7 +19,7 @@
     box-sizing: content-box;
     margin-left: auto;
     margin-right: auto;
-    max-width: var(--measure);
+    max-width: var(--max);
   }
   
   .center.and-text {

@@ -1,7 +1,7 @@
 <script>
   export let justify = 'center'
   export let align = 'center'
-  export let space = 'var(--s1)'
+  export let space = '1.5rem'
 </script>
 
 <div

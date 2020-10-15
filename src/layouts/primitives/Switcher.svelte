@@ -1,9 +1,20 @@
 <script>
-  export let threshold = 'var(--measure)'
-  export let space = 'var(--s1)'
+  import { onMount } from 'svelte'
+  
+  export let threshold = '60ch'
+  export let space = '1.5rem'
+  export let limit = 4
+  
+  let switcher
+  
+  onMount(() => {
+    switcher.querySelectorAll(`.switcher > * > :nth-last-child(n+${Number(limit) + 1}), .switcher > * > :nth-last-child(n+${Number(limit) + 1}) ~ *`)
+    .forEach(e => e.style.flexBasis = '100%')
+  })
 </script>
 
 <div
+  bind:this={switcher}
   class="switcher"
   style="--threshold: {threshold}; --space: {space === '0' ? '0px' : space}">
   <slot />
@@ -20,14 +31,5 @@
     flex-grow: 1;
     flex-basis: calc((var(--threshold) - (100% - var(--space))) * 999);
     margin: calc(var(--space) / 2);
-  }
-  /*
-    Limit = 4
-    The maximum number of elements allowed to appear in the horizontal configuration
-    https://every-layout.dev/layouts/switcher/
-  */
-  .switcher > :global(*) > :global(:nth-last-child(n+5)),
-  .switcher > :global(*) > :global(:nth-last-child(n+5)) ~ :global(*) {
-    flex-basis: 100%;
   }
 </style>

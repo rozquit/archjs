@@ -17,10 +17,7 @@
       .forEach(e => e.style.marginTop = 'var(--space)');
     if (splitAfter) {
       stack.querySelectorAll(`.stack :only-child`)
-        .forEach(e => {
-          e.style.height = '100%'
-          e.style.color = 'red'
-        })
+        .forEach(e => e.style.height = '100%')
       stack.querySelectorAll(`.stack > :nth-child(${splitAfter})`)
         .forEach(e => e.style.marginBottom = 'auto')
     }

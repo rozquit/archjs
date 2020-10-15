@@ -1,6 +1,6 @@
 <script>
   export let itemWidth = 'auto';
-  export let space = 'var(--s0)';
+  export let space = '1rem';
   export let height = 'auto';
   export let noBar = false;
   export let overflowing = false;

@@ -6,7 +6,7 @@
 
 <div
   class="imposter"
-  class:contain={breakout}
+  class:contain={!breakout}
   style="--margin: {margin}; --position: {fixed ? 'fixed' : 'absolute'}">
   <slot />
 </div>

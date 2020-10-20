@@ -1,5 +1,5 @@
 <script>
-  export let max = '60ch'
+  export let max = 'var(--measure)'
   export let andText = false
   export let gutters = 0
   export let intrinsic = false

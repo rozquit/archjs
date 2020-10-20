@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte'
 
-  export let space = '1.5rem'
+  export let space = 'var(--s1)'
   export let recursive = false
   export let splitAfter = null
 

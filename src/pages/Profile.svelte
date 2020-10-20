@@ -1,5 +1,6 @@
 <script>
-  export let username
+  export let params
+  const { username } = params
 </script>
 
 <svelte:head>

@@ -4,7 +4,7 @@
   export let side = 'left'
   export let sideWidth = null
   export let contentMin = '50%'
-  export let space = '1.5rem'
+  export let space = 'var(-s1)'
   export let noStretch = false
   
   let sidebar

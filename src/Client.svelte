@@ -37,7 +37,9 @@
     </Dashboard>
   </Route>
   <Route path="/private" middleware={[guard]}>
-    <h2>Private</h2>
+    <Dashboard>
+      <h2>Private</h2>
+    </Dashboard>
   </Route>
   <Route path="/login" component={Login} />
   <NotFound>

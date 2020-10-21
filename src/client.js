@@ -1,7 +1,7 @@
-import App from './client.svelte'
+import Client from './Client.svelte'
 import * as serviceWorker from './sw'
 
-window.app = new App({
+window.app = new Client({
   target: document.getElementsByTagName('app')[0]
 })
 

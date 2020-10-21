@@ -22,6 +22,12 @@ npm start
 npm run develop
 ```
 
+### Storybook
+
+```
+npm run storybook
+```
+
 ### Test
 
 ```

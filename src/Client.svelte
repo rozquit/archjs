@@ -12,37 +12,21 @@
     Login,
     Home,
     About,
-    Profile
+    Profile,
+    Error
   } from './pages'
 
   const data = { name: 'ArchJS', version: 'v0.1.0' }
+  const error = { code: 404, message: 'Not Found'}
 
   const guard = (ctx, next) => true ? redirect('/login') : next()
 </script>
 
 <Router>
-  <Route path="/">
-    <Dashboard>
-      <Home {data} />
-    </Dashboard>
-  </Route>
-  <Route path="/about">
-    <Dashboard>
-      <About />
-    </Dashboard>
-  </Route>
-  <Route path="/profile/:username" let:params>
-    <Dashboard>
-      <Profile {params}/>
-    </Dashboard>
-  </Route>
-  <Route path="/private" middleware={[guard]}>
-    <Dashboard>
-      <h2>Private</h2>
-    </Dashboard>
-  </Route>
-  <Route path="/login" component={Login} />
-  <NotFound>
-    <h2>404 Not Found</h2>
-  </NotFound>
+  <Route path="/" layout={Dashboard} component={Home} {data} />
+  <Route path="/about" layout={Dashboard} component={About} />
+  <Route path="/profile/:username" let:params layout={Dashboard} component={Profile} />
+  <Route path="/private" middleware={[guard]}><Dashboard><h2>Private</h2></Dashboard></Route>
+  <Route path="/login" layout={Dashboard} component={Login} />
+  <NotFound layout={Dashboard} component={Error} {error} />
 </Router>

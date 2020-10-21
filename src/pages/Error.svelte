@@ -1,12 +1,16 @@
+<script>
+  export let error
+</script>
+
 <svelte:head>
-  <title>ArchJS | About</title>
+  <title>ArchJS | 404 Not Found</title>
 </svelte:head>
 
-<h2>About</h2>
+<h2>{error.code} {error.message}</h2>
 
 <style>
   h2 {
-    color: #8204f9;
+    color: red;
     text-transform: uppercase;
     font-size: var(--s2);
     font-weight: 200;

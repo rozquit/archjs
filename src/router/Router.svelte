@@ -1,26 +1,26 @@
 <script context="module">
-  import { writable } from "svelte/store"
+  import { writable } from 'svelte/store'
 
   const routes = {}
 
   export const activeRoute = writable({})
   export const register = route => {
-    routes[route.path] = route;
+    routes[route.path] = route
   }
 </script>
 
 <script>
-  import page from "page"
-  import { onMount, onDestroy } from "svelte"
+  import page from 'page'
+  import { onMount, onDestroy } from 'svelte'
 
   export let disabled = false
   export let basePath = undefined
 
   const last = route => {
-    return function(ctx) {
+    return function (ctx) {
       $activeRoute = { ...route, params: ctx.params }
-    };
-  };
+    }
+  }
 
   const setupPage = () => {
     for (let [path, route] of Object.entries(routes)) {
@@ -32,7 +32,7 @@
     }
 
     page.start()
-  };
+  }
 
   onMount(setupPage)
 

@@ -1,13 +1,14 @@
 <script>
-  import { register, activeRoute } from "./Router.svelte"
+  import { register, activeRoute } from './Router.svelte'
 
-  export let path = "/"
+  export let path = '/'
+  export let layout = null
   export let component = null
   export let middleware = []
 
   let params = {}
 
-  register({ path, component, middleware })
+  register({ path, layout, component, middleware })
 
   $: if ($activeRoute.path === path) {
     params = $activeRoute.params
@@ -15,7 +16,12 @@
 </script>
 
 {#if $activeRoute.path === path}
-  {#if $activeRoute.component}
+  {#if $activeRoute.layout}
+    <svelte:component
+      this={$activeRoute.layout}
+      {...$$restProps}
+      {...params} />
+  {:else if $activeRoute.component}
     <svelte:component
       this={$activeRoute.component}
       {...$$restProps}

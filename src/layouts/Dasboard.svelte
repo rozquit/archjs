@@ -1,5 +1,15 @@
 <script>
+  import { register, activeRoute } from '../router/Router.svelte'
   import { Sidebar, Stack, Center } from './primitives'
+
+  export let path = "/"
+  export let layout = null
+  export let component = null
+  export let middleware = []
+
+  let params = {}
+
+  register({ path, layout, component, middleware })
 </script>
 
 <Sidebar contentMin="66.666%" sideWidth="10rem">
@@ -13,7 +23,14 @@
     </Stack>
     <main>
       <Center>
-        <slot />
+        {#if $activeRoute.component}
+          <svelte:component
+            this={$activeRoute.component}
+            {...$$restProps}
+            {...params} />
+        {:else}
+          <slot {params} />
+        {/if}
       </Center>
     </main>
   </div>

@@ -24,9 +24,9 @@
 
 <Router>
   <Route path="/" layout={Dashboard} component={Home} {data} />
-  <Route path="/about" layout={Dashboard} component={About} />
+  <Route path="/about" layout={Dashboard}><h2>About</h2></Route>
   <Route path="/profile/:username" let:params layout={Dashboard} component={Profile} />
-  <Route path="/private" middleware={[guard]}><Dashboard><h2>Private</h2></Dashboard></Route>
+  <Route path="/private" middleware={[guard]} ><Dashboard><h2>Private</h2></Dashboard></Route>
   <Route path="/login" layout={Dashboard} component={Login} />
-  <NotFound layout={Dashboard} component={Error} {error} />
+  <NotFound component={Error} {error} />
 </Router>

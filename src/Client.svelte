@@ -24,7 +24,7 @@
 
 <Router>
   <Route path="/" layout={Shell} component={Home} {data} />
-  <Route path="/about" layout={Shell}><h2>About</h2></Route>
+  <Route path="/about" layout={Shell} component={About} />
   <Route path="/profile/:username" let:params layout={Shell} component={Profile} />
   <Route path="/private" middleware={[guard]}><Shell><h2>Private</h2></Shell></Route>
   <Route path="/login" layout={Shell} component={Login} />

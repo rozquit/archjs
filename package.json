@@ -63,8 +63,7 @@
   "standard": {
     "ignore": [
       "dist",
-      "static",
-      "storybook-static"
+      "static"
     ]
   },
   "jest": {

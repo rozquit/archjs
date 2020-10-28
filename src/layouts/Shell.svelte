@@ -1,20 +1,14 @@
 <script>
-  import { Sidebar, Stack, Center } from './primitives'
+  import { Center, Cover } from './primitives'
+  import { Header } from '../components'
 </script>
 
-<Sidebar contentMin="66.666%" sideWidth="10rem">
-  <div>
-    <Stack space="var(--s2)">
-      <div><a href="/">Home</a></div>
-      <div><a href="/about">About</a></div>
-      <div><a href="/profile/arch">Profile</a></div>
-      <div><a href="/private">Private</a></div>
-      <div><a href="/login">Login</a></div>
-    </Stack>
-    <main>
-      <Center>
-        <slot />
-      </Center>
-    </main>
-  </div>
-</Sidebar>
+<Header />
+
+<main>
+  <Cover centered=".center">
+    <Center intrinsic>
+      <slot />
+    </Center>
+  </Cover>
+</main>

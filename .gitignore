@@ -6,6 +6,7 @@ etc/ssl
 config
 dist
 static/build
+__snapshots__
 
 *.log
 *.pem

@@ -1,3 +1,3 @@
-import Dashboard from './Dasboard.svelte'
+import Shell from './Shell.svelte'
 
-export { Dashboard }
+export { Shell }

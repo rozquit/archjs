@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Task Archived 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <div
+    class="list-item"
+  >
+    <input
+      readonly=""
+      type="text"
+    />
+  </div>
+</section>
+`;
+
+exports[`Storyshots Task Default 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <div
+    class="list-item"
+  >
+    <input
+      readonly=""
+      type="text"
+    />
+  </div>
+</section>
+`;
+
+exports[`Storyshots Task Pinned 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <div
+    class="list-item"
+  >
+    <input
+      readonly=""
+      type="text"
+    />
+  </div>
+</section>
+`;

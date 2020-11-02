@@ -39,11 +39,11 @@
     "@rollup/plugin-commonjs": "*",
     "@rollup/plugin-node-resolve": "*",
     "@rollup/plugin-replace": "*",
-    "@storybook/addon-actions": "^6.0.27",
-    "@storybook/addon-essentials": "^6.0.27",
-    "@storybook/addon-links": "^6.0.27",
-    "@storybook/addon-storyshots": "^6.0.27",
-    "@storybook/svelte": "^6.0.27",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/addon-storyshots": "^6.0.28",
+    "@storybook/svelte": "^6.0.28",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/svelte": "^3.0.0",
     "babel-loader": "*",
@@ -52,11 +52,11 @@
     "nodemon": "*",
     "prettier": "*",
     "react-is": "^17.0.1",
-    "rollup": "*",
+    "rollup": "^2.33.1",
     "rollup-plugin-livereload": "*",
     "rollup-plugin-svelte": "*",
     "rollup-plugin-terser": "*",
-    "standard": "*",
+    "standard": "^16.0.1",
     "svelte": "^3.29.4",
     "svelte-loader": "^2.13.6"
   },
@@ -71,13 +71,23 @@
       "^.+\\.js$": "babel-jest",
       "^.+\\.svelte$": "jest-transform-svelte"
     },
-    "moduleFileExtensions": ["js", "svelte", "json"],
+    "moduleFileExtensions": [
+      "js",
+      "svelte",
+      "json"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss|stylesheet)$": "<rootDir>/__mocks__/styleMock.js"
     },
-    "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"],
-    "testPathIgnorePatterns": ["/node_modules/", "/build/", "/storybook-static/"]
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build/",
+      "/storybook-static/"
+    ]
   },
   "engines": {
     "node": ">=14"

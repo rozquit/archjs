@@ -6,18 +6,13 @@
   export let component = null
   export let middleware = []
 
-  let Layout
-
   register({ path, layout, component, middleware })
-
-  $: if ($activeRoute.layout) {
-    Layout = $activeRoute.layout
-  }
+  
 </script>
 
 {#if $activeRoute.path === path}
   {#if $activeRoute.layout}
-    <Layout {...$$restProps}>
+    <svelte:component this={$activeRoute.layout}>
       {#if $activeRoute.component}
         <svelte:component
           this={$activeRoute.component}
@@ -25,7 +20,7 @@
       {:else}
         <slot />
       {/if}
-    </Layout>
+    </svelte:component>
   {:else if $activeRoute.component}
     <svelte:component
       this={$activeRoute.component}

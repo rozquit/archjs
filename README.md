@@ -31,7 +31,7 @@ npm run storybook
 ### Test
 
 ```
-npm test
+npm echo
 ```
 
 ## Credits:

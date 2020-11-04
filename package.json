@@ -1,6 +1,6 @@
 {
   "name": "archjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Full-stack Node.js Framework",
   "keywords": [
     "nodejs",
@@ -11,7 +11,8 @@
     "full-stack",
     "framework",
     "rpc",
-    "json-rpc"
+    "json-rpc",
+    "most"
   ],
   "author": "Artem Tolstykh aka Mr. Arch",
   "license": "MIT",
@@ -28,6 +29,7 @@
   "dependencies": {
     "abstract-logging": "*",
     "ajv": "*",
+    "most": "*",
     "page": "*",
     "pino": "*",
     "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.9.0"
@@ -40,6 +42,7 @@
     "@babel/runtime": "*",
     "@rollup/plugin-babel": "*",
     "@rollup/plugin-commonjs": "*",
+    "@rollup/plugin-json": "*",
     "@rollup/plugin-node-resolve": "*",
     "@rollup/plugin-replace": "*",
     "@storybook/addon-actions": "*",

@@ -1,5 +1,4 @@
 'use strict'
-
-const echo = args => args
+const echo = async args => args
 
 module.exports = echo

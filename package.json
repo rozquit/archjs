@@ -37,7 +37,7 @@
     "@babel/plugin-syntax-dynamic-import": "*",
     "@babel/plugin-transform-runtime": "*",
     "@babel/preset-env": "*",
-    "@babel/runtime": "^7.12.5",
+    "@babel/runtime": "*",
     "@rollup/plugin-babel": "*",
     "@rollup/plugin-commonjs": "*",
     "@rollup/plugin-node-resolve": "*",

@@ -1,6 +1,7 @@
 import uWS from 'uWebSockets.js'
 import { pg, serve, rpc, Logger } from '../lib'
 import { PORT } from '../config'
+
 const dev = process.env.NODE_ENV === 'development'
 const logger = new Logger().create({ logger: dev })
 
@@ -25,7 +26,7 @@ uWS
     drain: ws => logger.info(`ws backpressure: ${ws.getBufferedAmount()}`),
     close: (ws, code, message) => logger.info('ws closed')
   })
-  .listen(PORT,(token) => {
+  .listen(PORT, (token) => {
     if (token) {
       console.log('[arch|uws] listening to port:', PORT)
     } else {

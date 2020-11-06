@@ -1,3 +1,5 @@
+'use strict'
+
 class QueryBuilder {
   constructor (pool, values) {
     this.query = ''

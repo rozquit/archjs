@@ -1,3 +1,3 @@
-import QueryBuilder from './query-builder'
+const QueryBuilder = require('./query-builder')
 
-export { QueryBuilder }
+module.exports = { QueryBuilder }

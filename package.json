@@ -1,6 +1,6 @@
 {
   "name": "archjs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Full-stack Node.js Framework",
   "keywords": [
     "nodejs",
@@ -12,7 +12,10 @@
     "framework",
     "rpc",
     "json-rpc",
-    "most"
+    "most",
+    "postgresql",
+    "postgres",
+    "pg"
   ],
   "author": "Artem Tolstykh aka Mr. Arch",
   "license": "MIT",
@@ -30,8 +33,9 @@
     "abstract-logging": "*",
     "ajv": "*",
     "most": "*",
+    "nanoid": "*",
     "page": "*",
-    "pg": "^8.4.2",
+    "pg": "*",
     "pino": "*",
     "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.9.0"
   },

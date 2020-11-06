@@ -1,11 +1,12 @@
 import uWS from 'uWebSockets.js'
+import { nanoid } from 'nanoid'
 import { pg, serve, rpc, Logger } from '../lib'
 import { PORT } from '../config'
 
 const dev = process.env.NODE_ENV === 'development'
 const logger = new Logger().create({ logger: dev })
 
-pg.connect().catch((error) => logger.error(`error: ${error}`))
+pg.connect().catch((error) => logger.error(`error: { message: ${error.message} }`))
 
 uWS
   ./* SSL */App({
@@ -19,7 +20,8 @@ uWS
     maxPayloadLength: 16 * 1024 * 1024,
     idleTimeout: 0,
     open: ws => {
-      ws.id = Math.random()
+      logger.info('ws connected')
+      ws.id = nanoid()
       ws.subscribe('broadcast')
     },
     message: rpc,

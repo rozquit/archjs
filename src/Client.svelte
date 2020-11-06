@@ -18,7 +18,7 @@
 
   const guard = (ctx, next) => true ? redirect('/login') : next()
 
-  const data = { name: 'ArchJS', version: 'v0.1.0' }
+  const data = { name: 'ArchJS', version: 'v0.1.2' }
   const error = { code: 404, message: 'Not Found'}
 </script>
 

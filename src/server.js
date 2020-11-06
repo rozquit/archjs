@@ -1,9 +1,10 @@
 import uWS from 'uWebSockets.js'
-import { serve, rpc, Logger } from '../lib'
+import { pg, serve, rpc, Logger } from '../lib'
 import { PORT } from '../config'
-
 const dev = process.env.NODE_ENV === 'development'
 const logger = new Logger().create({ logger: dev })
+
+pg.connect().catch((error) => logger.error(`error: ${error}`))
 
 uWS
   ./* SSL */App({
@@ -15,13 +16,16 @@ uWS
   .ws('/*', {
     compression: uWS.SHARED_COMPRESSOR,
     maxPayloadLength: 16 * 1024 * 1024,
-    idleTimeout: 10,
-    open: ws => logger.info('ws connected'),
+    idleTimeout: 0,
+    open: ws => {
+      ws.id = Math.random()
+      ws.subscribe('broadcast')
+    },
     message: rpc,
     drain: ws => logger.info(`ws backpressure: ${ws.getBufferedAmount()}`),
     close: (ws, code, message) => logger.info('ws closed')
   })
-  .listen(PORT, token => {
+  .listen(PORT,(token) => {
     if (token) {
       console.log('[arch|uws] listening to port:', PORT)
     } else {

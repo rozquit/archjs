@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime'
 import uWS from 'uWebSockets.js'
 import { nanoid } from 'nanoid'
 import { pg, serve, rpc, Logger } from '../lib'
@@ -6,7 +7,7 @@ import { PORT } from '../config'
 const dev = process.env.NODE_ENV === 'development'
 const logger = new Logger().create({ logger: dev })
 
-pg.connect().catch((error) => logger.error(`error: { message: ${error.message} }`))
+pg.connect().catch(error => logger.error(`error: { message: ${error.message} }`))
 
 uWS
   ./* SSL */App({

@@ -4,6 +4,8 @@ import replace from '@rollup/plugin-replace'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import babel from '@rollup/plugin-babel'
+import { uglify } from 'rollup-plugin-uglify'
+import { minify } from 'uglify-js'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
@@ -72,9 +74,13 @@ export default [
           '@babel/plugin-syntax-dynamic-import',
           ['@babel/plugin-transform-runtime', {
             useESModules: true
+          }],
+          ['@babel/proposal-pipeline-operator', {
+            proposal: 'minimal'
           }]
         ]
       }),
+      uglify({}, minify),
       dev && serve(),
       dev && livereload(stc),
       !dev && terser({
@@ -84,7 +90,6 @@ export default [
     watch: {
       clearScreen: false
     },
-
     preserveEntrySignatures: false
   },
   {
@@ -107,10 +112,25 @@ export default [
       resolve({
         dedupe: ['svelte']
       }),
+      babel({
+        babelrc: false,
+        babelHelpers: 'bundled',
+        exclude: 'node_modules/**',
+        presets: [
+          ['@babel/preset-env', {
+            targets: '> 0.25%, not dead'
+          }]
+        ],
+        plugins: [
+          ['@babel/proposal-pipeline-operator', {
+            proposal: 'minimal'
+          }]
+        ]
+      }),
+      uglify({}, minify),
       commonjs()
     ],
     external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
-
     preserveEntrySignatures: 'strict'
   },
   {
@@ -129,7 +149,6 @@ export default [
       commonjs(),
       !dev && terser()
     ],
-
     preserveEntrySignatures: false
   }
 ]

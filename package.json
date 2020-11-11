@@ -37,10 +37,11 @@
     "page": "*",
     "pg": "*",
     "pino": "*",
-    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.9.0"
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.10.0"
   },
   "devDependencies": {
     "@babel/core": "*",
+    "@babel/plugin-proposal-pipeline-operator": "*",
     "@babel/plugin-syntax-dynamic-import": "*",
     "@babel/plugin-transform-runtime": "*",
     "@babel/preset-env": "*",
@@ -63,13 +64,16 @@
     "nodemon": "*",
     "prettier": "*",
     "react-is": "*",
+    "regenerator-runtime": "*",
     "rollup": "*",
     "rollup-plugin-livereload": "*",
     "rollup-plugin-svelte": "*",
     "rollup-plugin-terser": "*",
+    "rollup-plugin-uglify": "*",
     "standard": "*",
     "svelte": "*",
-    "svelte-loader": "*"
+    "svelte-loader": "*",
+    "uglify-js": "*"
   },
   "standard": {
     "ignore": [

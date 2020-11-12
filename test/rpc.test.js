@@ -62,7 +62,7 @@ describe('json-rpc-2.0', () => {
       ws.close()
     })
     
-    setTimeout(() => ws.close(), 2000)
+    setTimeout(() => ws.close(), 1000)
     
     ws.addEventListener('close', () => done())
   })
@@ -79,7 +79,7 @@ describe('json-rpc-2.0', () => {
       ws.close()
     })
     
-    setTimeout(() => ws.close(), 2000)
+    setTimeout(() => ws.close(), 1000)
     
     ws.addEventListener('close', () => done())
   })
@@ -97,7 +97,7 @@ describe('json-rpc-2.0', () => {
       ws.close()
     })
   
-    setTimeout(() => ws.close(), 2000)
+    setTimeout(() => ws.close(), 1000)
     
     ws.addEventListener('close', () => done())
   })
@@ -283,7 +283,7 @@ describe('json-rpc-2.0', () => {
       ws.close()
     })
     
-    setTimeout(() => ws.close(), 2000)
+    setTimeout(() => ws.close(), 1000)
     
     ws.addEventListener('close', () => done())
   })

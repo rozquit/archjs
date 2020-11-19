@@ -4,8 +4,6 @@ import replace from '@rollup/plugin-replace'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import babel from '@rollup/plugin-babel'
-import { uglify } from 'rollup-plugin-uglify'
-import { minify } from 'uglify-js'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
@@ -80,12 +78,11 @@ export default [
           }]
         ]
       }),
-      uglify({}, minify),
-      dev && serve(),
-      dev && livereload(stc),
       !dev && terser({
         module: true
-      })
+      }),
+      dev && serve(),
+      dev && livereload(stc),
     ],
     watch: {
       clearScreen: false
@@ -127,8 +124,10 @@ export default [
           }]
         ]
       }),
-      uglify({}, minify),
-      commonjs()
+      commonjs(),
+      !dev && terser({
+        toplevel: true
+      })
     ],
     external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
     preserveEntrySignatures: 'strict'

@@ -69,11 +69,9 @@
     "rollup-plugin-livereload": "*",
     "rollup-plugin-svelte": "*",
     "rollup-plugin-terser": "*",
-    "rollup-plugin-uglify": "*",
     "standard": "*",
     "svelte": "*",
-    "svelte-loader": "*",
-    "uglify-js": "*"
+    "svelte-loader": "*"
   },
   "standard": {
     "ignore": [

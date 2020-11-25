@@ -82,7 +82,7 @@ export default [
         module: true
       }),
       dev && serve(),
-      dev && livereload(stc),
+      dev && livereload(stc)
     ],
     watch: {
       clearScreen: false
